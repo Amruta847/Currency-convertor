@@ -6,6 +6,21 @@ for (let select of dropdowns) {
         let newOption = document.createElement("option");
         newOption.innerText = Currcode;
         newOption.value = Currcode;
+        if (select.name=== "from" && Currcode=== "USD") {
+            newOption.selected = "selected";
+        } else if (select.name=== "to" && Currcode=== "INR"){
+             newOption.selected = "selected";
+        }
         select.append(newOption);
     }
+
+    select.addEventListener("change", (evt)) = () => {
+        updateFlag(evt.target);
+    };
+};
+
+const updateFlag = (element) => {
+    let Currcode = element.value;
+    let countryCode = countryList[Currcode];
+    let newSrc = `https://flagsapi.com/${countryCode}/flat/64.png`
 }

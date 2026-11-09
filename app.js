@@ -3,6 +3,9 @@ const dropdowns = document.querySelectorAll(".dropdown select");
 
 for (let select of dropdowns) {
     for (Currcode in countryList) {
-        console.log()
+        let newOption = document.createElement("option");
+        newOption.innerText = Currcode;
+        newOption.value = Currcode;
+        select.append(newOption);
     }
 }
